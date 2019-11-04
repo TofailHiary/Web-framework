@@ -1,3 +1,0 @@
-env=${envUrl}
-browserValue=${browser}
-localeToRun=${locale}
