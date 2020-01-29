@@ -50,6 +50,7 @@ public class PageFactory {
 
 	public void initWebDriver() {
 		this.setProps(PropertiesManager.getProperties());
+		this.setProps(PropertiesManager.getPropertiesofenv());
         this.setLocaleProps(PropertiesManager.getLocaleProperties(props.getProperty("localeToRun")));
         DriverManager.getDriver(props.getProperty("browserValue"));
         UsersManager.loadUsers();
