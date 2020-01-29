@@ -13,6 +13,7 @@ import java.util.Properties;
 public class PropertiesManager {
 
     public static Properties props = new Properties();
+    public static Properties envProps = new Properties();
     public static Properties localeProps = new Properties();
     public static Properties extentReportProps = new Properties();
 
@@ -41,6 +42,15 @@ public class PropertiesManager {
         return props;
     }
 
+    public static Properties getPropertiesofenv() {
+
+        String fileName = "environment.properties";
+
+        envProps = new Properties();
+        envProps = loadProperties(fileName, envProps);
+
+        return props;
+    }
     public static Properties getLocaleProperties(String locale) {
 
 
