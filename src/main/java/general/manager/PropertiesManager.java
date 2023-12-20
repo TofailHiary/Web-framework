@@ -1,9 +1,5 @@
 package general.manager;
 
-/**
- * Created by AKhawatrah on 1/13/2019.
- */
-
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.Properties;

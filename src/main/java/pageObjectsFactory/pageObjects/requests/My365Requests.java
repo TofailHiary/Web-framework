@@ -1,14 +1,10 @@
 package pageObjectsFactory.pageObjects.requests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
 
 import general.manager.DriverManager;
-import general.manager.UsersManager;
 
 import pageObjectsFactory.PageFactory;
 
@@ -17,229 +13,202 @@ import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Amal.K
- * Date: 1/15/2019
- * Time: 2:52 PM
- * To change this template use File | Settings | File and Code Templates.
- */
 public class My365Requests extends DriverManager {
 	public int numOftasks;
-    public static String title;
+	public static String title;
 
-    @FindBy(css = "i[id='ico-modules-three']")
-    protected WebElement viewModules;
+	@FindBy(css = "i[id='ico-modules-three']")
+	protected WebElement viewModules;
 
-    @FindBy(css = "a[id='my365']")
-    protected WebElement my365;
+	@FindBy(css = "a[id='my365']")
+	protected WebElement my365;
 
-    @FindBy(css = "li[id='requests']")
-    protected WebElement employeeRequests;
+	@FindBy(css = "li[id='requests']")
+	protected WebElement employeeRequests;
 
-    @FindBy(css = ".glyphicon-plus")
-    protected WebElement addNewRequest;
+	@FindBy(css = ".glyphicon-plus")
+	protected WebElement addNewRequest;
 
-    @FindBy(id = "openNewTask")
-    protected WebElement  openNewTask;
-    
-   
-    @FindBy(css = "input[id='newRequestTitle']")
-    protected WebElement newRequestTitle;
+	@FindBy(id = "openNewTask")
+	protected WebElement openNewTask;
 
-    @FindBy(id = "addTaskName")
-    protected WebElement addTaskName;
-    
-    @FindBy(css = "button[id='newRequestSend']")
-    protected WebElement newRequestSend;
+	@FindBy(css = "input[id='newRequestTitle']")
+	protected WebElement newRequestTitle;
 
-    @FindBy(css = "input[id='requestSearch']")
-    protected WebElement requestSearch;
-    @FindBy(css = "input[id='taskByMeSearch']")
-    protected WebElement tasksearch;
-    
-    
-    @FindBy(css = "#gridRequets-7168cff3-1d81-40a9-b505-33340cc073a5 > div.k-grid-content > table > tbody > tr > td.text-left")
-    protected WebElement firstRecord;
+	@FindBy(id = "addTaskName")
+	protected WebElement addTaskName;
 
-    @FindBy(css = "td.text-left")
-    protected WebElement firsttask;
-    
-    
-    @FindBy(css = "#body-loader")
-    protected WebElement bodyLoader;
+	@FindBy(css = "button[id='newRequestSend']")
+	protected WebElement newRequestSend;
 
-    @FindBy(css = ".toast-message > div:nth-child(1)")
-    protected WebElement toastMessage;
+	@FindBy(css = "input[id='requestSearch']")
+	protected WebElement requestSearch;
+	@FindBy(css = "input[id='taskByMeSearch']")
+	protected WebElement tasksearch;
 
-    @FindBy(css = "div.modal-body:nth-child(1)")
-    protected WebElement addRequestDialog;
+	@FindBy(css = "#gridRequets-7168cff3-1d81-40a9-b505-33340cc073a5 > div.k-grid-content > table > tbody > tr > td.text-left")
+	protected WebElement firstRecord;
 
-    @FindBy(css = "#requestTypeOpen > div:nth-child(1) > div:nth-child(1)")
-    protected WebElement numberOfOpenRequests;
+	@FindBy(css = "td.text-left")
+	protected WebElement firsttask;
 
-    public static String numberOfOpenRequestsBefore = "";
-    public static String toast = "";
-    public static int tasksAssignedByMeOpenBefore;
-    @FindBy(css = "div.selected div.body div.ng-binding.number")
-    protected WebElement tasksAssignedByMeOpen;
-   
-    
-    @FindBy(xpath  = "//span[contains(text(),'tasks')]")
-    protected WebElement mytasks;
-    
-    @FindBy(xpath  = "//a[@placeholder='Select a Person']//span[@class='select2-arrow ui-select-toggle']")
-    protected WebElement select_person;
-    
-    @FindBy(xpath  = "//DIV[@ng-bind-html='employee.name | highlight: $select.search'][text()='Maria Rosa']")
-    protected WebElement addmember;
-    
-    @FindBy(xpath  = "//input[@id='addTaskDueDate']")
-    protected WebElement calendar;
-    @FindBy(id = "addTaskSave")
-    protected WebElement  addTaskSave;
-    @FindBy(id = "addTaskEmployees")
-    protected WebElement  addTaskEmployees;
-    
-    
-  
-    
-    
-     
-   
- 
-    public My365Requests(WebDriver driver) {
-        super(driver);
-        // org.openqa.selenium.support.PageFactory.initElements(this.driver, this);
-    }
+	@FindBy(css = "#body-loader")
+	protected WebElement bodyLoader;
 
-    public void navigateToMy365Requests()  {
-        waitUntilElemnetIsClickable(viewModules);
-        viewModules.click();
-        waitUntilElemnetIsClickable(my365);
-        my365.click();
-        waitUntilElemnetIsClickable(employeeRequests);
-        employeeRequests.click();
-        waitUntilElemnetIsClickable(addNewRequest);
-        waitUntilElementIsInvisible(bodyLoader);
-    }
+	@FindBy(css = ".toast-message > div:nth-child(1)")
+	protected WebElement toastMessage;
 
-    
-    
-    public void addNewRequest() throws InterruptedException {
+	@FindBy(css = "div.modal-body:nth-child(1)")
+	protected WebElement addRequestDialog;
 
-       waitUntilElemnetIsVisible(numberOfOpenRequests);
-        numberOfOpenRequestsBefore = numberOfOpenRequests.getText();
-        addNewRequest.click();
-        //Thread.sleep(10000);
+	@FindBy(css = "#requestTypeOpen > div:nth-child(1) > div:nth-child(1)")
+	protected WebElement numberOfOpenRequests;
 
-        Date dNow = new Date();
-        SimpleDateFormat ft = new SimpleDateFormat("yyMMddhhmmssMs");
-        title = ft.format(dNow);
+	public static String numberOfOpenRequestsBefore = "";
+	public static String toast = "";
+	public static int tasksAssignedByMeOpenBefore;
+	@FindBy(css = "div.selected div.body div.ng-binding.number")
+	protected WebElement tasksAssignedByMeOpen;
 
-        waitUntilElemnetIsVisible(newRequestTitle);
-        newRequestTitle.sendKeys(title);
-        newRequestSend.click();
-        //waitUntilElementIsInvisible(newRequestSend);
-        try {
-            Thread.sleep(2000);
-        } catch (Exception e) {
+	@FindBy(xpath = "//span[contains(text(),'tasks')]")
+	protected WebElement mytasks;
 
-        }
-        toast = toastMessage.getText();
-        //waitUntilElementIsInvisible(toastMessage);
-        //Thread.sleep(10000);
-        //Thread.sleep(10000);
-    }
+	@FindBy(xpath = "//a[@placeholder='Select a Person']//span[@class='select2-arrow ui-select-toggle']")
+	protected WebElement select_person;
 
-    
-    public void checkRequestWasCreated() {
+	@FindBy(xpath = "//DIV[@ng-bind-html='employee.name | highlight: $select.search'][text()='Maria Rosa']")
+	protected WebElement addmember;
 
-        waitUntilElemnetIsVisible(requestSearch);
+	@FindBy(xpath = "//input[@id='addTaskDueDate']")
+	protected WebElement calendar;
+	@FindBy(id = "addTaskSave")
+	protected WebElement addTaskSave;
+	@FindBy(id = "addTaskEmployees")
+	protected WebElement addTaskEmployees;
 
-        requestSearch.sendKeys(title);
+	public My365Requests(WebDriver driver) {
+		super(driver);
+		// org.openqa.selenium.support.PageFactory.initElements(this.driver, this);
+	}
 
-        try {
-            Thread.sleep(3000);
-        } catch (Exception e) {
+	public void navigateToMy365Requests() {
+		waitUntilElemnetIsClickable(viewModules);
+		viewModules.click();
+		waitUntilElemnetIsClickable(my365);
+		my365.click();
+		waitUntilElemnetIsClickable(employeeRequests);
+		employeeRequests.click();
+		waitUntilElemnetIsClickable(addNewRequest);
+		waitUntilElementIsInvisible(bodyLoader);
+	}
 
-        }
-        waitUntilElemnetIsVisible(firstRecord);
+	public void addNewRequest() throws InterruptedException {
 
-        assertEquals(title, firstRecord.getText());
+		waitUntilElemnetIsVisible(numberOfOpenRequests);
+		numberOfOpenRequestsBefore = numberOfOpenRequests.getText();
+		addNewRequest.click();
+		// Thread.sleep(10000);
 
-        assertEquals(PageFactory.localeProps.getProperty("addRequestToast") , toast );
-        Integer expectedNumberOfOpenRequests =  Integer.valueOf(numberOfOpenRequestsBefore) + 1;
-        assertEquals(numberOfOpenRequests.getText(), expectedNumberOfOpenRequests.toString());
-        //PageFactory.instance()._driver.findElement(By.xpath("dasdad"))
-    }
+		Date dNow = new Date();
+		SimpleDateFormat ft = new SimpleDateFormat("yyMMddhhmmssMs");
+		title = ft.format(dNow);
 
+		waitUntilElemnetIsVisible(newRequestTitle);
+		newRequestTitle.sendKeys(title);
+		newRequestSend.click();
+		// waitUntilElementIsInvisible(newRequestSend);
+		try {
+			Thread.sleep(2000);
+		} catch (Exception e) {
 
-    public void navigateToMytasks()  {
-        waitUntilElemnetIsClickable(viewModules);
-        viewModules.click();
-        waitUntilElemnetIsClickable(my365);
-        my365.click();
-        waitUntilElemnetIsClickable(mytasks);
-        mytasks.click();
-        waitUntilElemnetIsClickable(openNewTask);
-        waitUntilElementIsInvisible(bodyLoader);
-    }
-   
-    
-    public void addNewTask() {
+		}
+		toast = toastMessage.getText();
+		// waitUntilElementIsInvisible(toastMessage);
+		// Thread.sleep(10000);
+		// Thread.sleep(10000);
+	}
 
-        //Thread.sleep(3000);
-    	tasksAssignedByMeOpenBefore = Integer.parseInt(tasksAssignedByMeOpen.getText());
-    //	numOftasks=Integer.parseInt(tasksAssignedByMeOpenBefore);
-        openNewTask.click();
-        //Thread.sleep(10000);
-        Date dNow = new Date();
-        SimpleDateFormat ft = new SimpleDateFormat("yyMMddhhmmssMs");
-        title = ft.format(dNow);
-        waitUntilElemnetIsVisible(addTaskName);
-        waitUntilPageIsLoadded();
-        addTaskName.sendKeys(title);
-        select_person.click(); 
-        waitUntilElemnetIsVisible(addmember);
-        addmember.click();
-        calendar.sendKeys("29/06/2020");
-        waitUntilElemnetIsClickable(addTaskSave);
-        //waitUntilElementIsInvisible(newRequestSend);
-        addTaskSave.click();
-        try {
-            Thread.sleep(2000);
-        } catch (Exception e) {
+	public void checkRequestWasCreated() {
 
-        }
-        toast = toastMessage.getText();
-       
-    }
-    
-    
-    public void checkTaskCreated() {
+		waitUntilElemnetIsVisible(requestSearch);
 
-        waitUntilElemnetIsVisible(tasksearch);
+		requestSearch.sendKeys(title);
 
-        tasksearch.sendKeys(title);
+		try {
+			Thread.sleep(3000);
+		} catch (Exception e) {
 
-        try {
-            Thread.sleep(3000);
-        } catch (Exception e) {
+		}
+		waitUntilElemnetIsVisible(firstRecord);
 
-        }
-        waitUntilElemnetIsVisible(firsttask);
-        assertEquals(title, firsttask.getText());
-        assertEquals(PageFactory.localeProps.getProperty("addRequestToast") , toast );     
-      int numtasksafter=Integer.parseInt(tasksAssignedByMeOpen.getText());
-        assertEquals(tasksAssignedByMeOpenBefore+1, numtasksafter);
-       
-        
-    }
-    
-    
-    
-    public void waitUntilMy365RequestPageIsLoaded() {
-        waitUntilPageIsLoadded();
-    }
+		assertEquals(title, firstRecord.getText());
+
+		assertEquals(PageFactory.localeProps.getProperty("addRequestToast"), toast);
+		Integer expectedNumberOfOpenRequests = Integer.valueOf(numberOfOpenRequestsBefore) + 1;
+		assertEquals(numberOfOpenRequests.getText(), expectedNumberOfOpenRequests.toString());
+		// PageFactory.instance()._driver.findElement(By.xpath("dasdad"))
+	}
+
+	public void navigateToMytasks() {
+		waitUntilElemnetIsClickable(viewModules);
+		viewModules.click();
+		waitUntilElemnetIsClickable(my365);
+		my365.click();
+		waitUntilElemnetIsClickable(mytasks);
+		mytasks.click();
+		waitUntilElemnetIsClickable(openNewTask);
+		waitUntilElementIsInvisible(bodyLoader);
+	}
+
+	public void addNewTask() {
+
+		// Thread.sleep(3000);
+		tasksAssignedByMeOpenBefore = Integer.parseInt(tasksAssignedByMeOpen.getText());
+		// numOftasks=Integer.parseInt(tasksAssignedByMeOpenBefore);
+		openNewTask.click();
+		// Thread.sleep(10000);
+		Date dNow = new Date();
+		SimpleDateFormat ft = new SimpleDateFormat("yyMMddhhmmssMs");
+		title = ft.format(dNow);
+		waitUntilElemnetIsVisible(addTaskName);
+		waitUntilPageIsLoadded();
+		addTaskName.sendKeys(title);
+		select_person.click();
+		waitUntilElemnetIsVisible(addmember);
+		addmember.click();
+		calendar.sendKeys("29/06/2020");
+		waitUntilElemnetIsClickable(addTaskSave);
+		// waitUntilElementIsInvisible(newRequestSend);
+		addTaskSave.click();
+		try {
+			Thread.sleep(2000);
+		} catch (Exception e) {
+
+		}
+		toast = toastMessage.getText();
+
+	}
+
+	public void checkTaskCreated() {
+
+		waitUntilElemnetIsVisible(tasksearch);
+
+		tasksearch.sendKeys(title);
+
+		try {
+			Thread.sleep(3000);
+		} catch (Exception e) {
+
+		}
+		waitUntilElemnetIsVisible(firsttask);
+		assertEquals(title, firsttask.getText());
+		assertEquals(PageFactory.localeProps.getProperty("addRequestToast"), toast);
+		int numtasksafter = Integer.parseInt(tasksAssignedByMeOpen.getText());
+		assertEquals(tasksAssignedByMeOpenBefore + 1, numtasksafter);
+
+	}
+
+	public void waitUntilMy365RequestPageIsLoaded() {
+		waitUntilPageIsLoadded();
+	}
 }

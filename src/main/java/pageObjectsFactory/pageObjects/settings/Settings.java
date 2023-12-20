@@ -7,13 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import general.manager.DriverManager;
 
 
-/**
- * Created by IntelliJ IDEA.
- * User: Amal.K
- * Date: 3/4/2019
- * Time: 12:25 PM
- * To change this template use File | Settings | File and Code Templates.
- */
+
 public class Settings extends DriverManager {
 
     @FindBy(css = "i[id='ico-modules-three']")

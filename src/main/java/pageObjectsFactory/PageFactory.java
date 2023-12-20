@@ -10,17 +10,13 @@ import org.openqa.selenium.WebDriver;
 import pageObjectsFactory.pageObjects.login.HomePage;
 import pageObjectsFactory.pageObjects.login.LoginPage;
 import pageObjectsFactory.pageObjects.requests.My365Requests;
-import pageObjectsFactory.pageObjects.settings.peopleSettings.BenefitsTypesAndPlans;
-import pageObjectsFactory.pageObjects.settings.peopleSettings.PeopleSettings;
+
 import pageObjectsFactory.pageObjects.settings.Settings;
 
 import java.util.HashMap;
 import java.util.Properties;
 
 
-/**
- * Created by Amal on 1/14/2019.
- */
 public class PageFactory {
 
     public static Properties props = new Properties();
@@ -34,8 +30,6 @@ public class PageFactory {
     private LoginPage _LoginPage;
     private My365Requests _my365Requests;
     private Settings _settings;
-    private PeopleSettings _peopleSettings;
-    private BenefitsTypesAndPlans _benefitsTypesAndPlans;
     private HomePage _homePage;
 
     public PageFactory(){
@@ -92,17 +86,6 @@ public class PageFactory {
         return _settings;
     }
 
-    public PeopleSettings peopleSettingsPage() {
-       
-            _peopleSettings = new PeopleSettings(getWebDriver());  
-        return _peopleSettings;
-    }
-
-    public BenefitsTypesAndPlans benefitsTypesAndPlans() {
-        
-            _benefitsTypesAndPlans = new BenefitsTypesAndPlans(getWebDriver());
-        return _benefitsTypesAndPlans;
-    }
     
     
     public HomePage homepage() {

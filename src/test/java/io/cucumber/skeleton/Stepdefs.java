@@ -1,8 +1,6 @@
 package io.cucumber.skeleton;
 
-import com.cucumber.listener.Reporter;
 
-import cucumber.api.PendingException;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -11,20 +9,18 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import general.manager.DriverManager;
-import general.manager.PropertiesManager;
+
 import general.manager.UsersManager;
 import io.qameta.allure.Allure;
 
 import org.apache.commons.io.FileUtils;
-import org.assertj.core.api.SoftAssertions;
-import org.junit.Assert;
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.asserts.SoftAssert;
 
 import pageObjectsFactory.PageFactory;
-import pageObjectsFactory.pageObjects.login.LoginPage;
-import static org.junit.Assert.assertTrue;
+
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -140,17 +136,17 @@ PageFactory.instance().loginPage().openhomePage();
         PageFactory.instance().settingsPage().navigateToPeopleSettings();
     }
 
-    @And("^navigate to Benefits Types And Plans page$")
-    public void navigateToBenefitsTypesAndPlansPage() {
-        PageFactory.instance().peopleSettingsPage().openBenefitsTypesAndPlans();
-    }
+//    @And("^navigate to Benefits Types And Plans page$")
+//    public void navigateToBenefitsTypesAndPlansPage() {
+//        PageFactory.instance().peopleSettingsPage().openBenefitsTypesAndPlans();
+//    }
 
-    @And("^open the settings for \"([^\"]*)\" Benefits$")
-    public void openTheSettingsForBenefits(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        PageFactory.instance().benefitsTypesAndPlans().openABenefitSettings(arg0);
-      //  Thread.sleep(10000);
-    }
+//    @And("^open the settings for \"([^\"]*)\" Benefits$")
+//    public void openTheSettingsForBenefits(String arg0) throws Throwable {
+//        // Write code here that turns the phrase above into concrete actions
+//        PageFactory.instance().benefitsTypesAndPlans().openABenefitSettings(arg0);
+//      //  Thread.sleep(10000);
+//    }
 
     @Given("^false step$")
     public void falseStep() {
@@ -166,13 +162,13 @@ PageFactory.instance().loginPage().openhomePage();
         softAssertions.assertAll();
     }
 
-    @Then("^check the settings for \"([^\"]*)\" Benefit$")
-    public void checkTheSettingsForBenefit(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        PageFactory.instance().benefitsTypesAndPlans().openABenefitSettings(arg0);
-        PageFactory.instance().benefitsTypesAndPlans().checkABenefitSetting(arg0);
-        //throw new PendingException();
-    }
+//    @Then("^check the settings for \"([^\"]*)\" Benefit$")
+//    public void checkTheSettingsForBenefit(String arg0) throws Throwable {
+//        // Write code here that turns the phrase above into concrete actions
+//        PageFactory.instance().benefitsTypesAndPlans().openABenefitSettings(arg0);
+//        PageFactory.instance().benefitsTypesAndPlans().checkABenefitSetting(arg0);
+//        //throw new PendingException();
+//    }
 
 /*    @After
     public void logoutOfTheSystem() throws InterruptedException {

@@ -1,16 +1,11 @@
 package io.cucumber.skeleton;
 
 
-import java.io.File;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 //import com.cucumber.listener.Reporter;
 import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
 
-import com.cucumber.listener.Reporter;
 //import cucumber.api.junit.Cucumber;
 import com.github.mkolisnyk.cucumber.runner.ExtendedCucumber;
 

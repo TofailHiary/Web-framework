@@ -2,19 +2,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>shepherd365</groupId>
-    <artifactId>autobots</artifactId>
+    <groupId>com.tofail.qa</groupId>
+    <artifactId>qa-automation-tools</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
-    <name>autobots</name>
+    <name>Tofail's QA Automation Tools</name>
 
     <properties>
         <java.version>1.8</java.version>
         <junit.version>4.12</junit.version>
         <cucumber.version>1.2.5</cucumber.version>
         <maven.compiler.version>3.3</maven.compiler.version>
-        <envUrl>http://www.qat2.shepherd365.com</envUrl>
-        <browser>firefox</browser>
+        <envUrl>https://opensource-demo.orangehrmlive.com/web/index.php/auth/login</envUrl>
+        <browser>EDGE</browser>
         <locale>en</locale>
         <aspectj.version>1.9.2</aspectj.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -171,7 +171,13 @@
             <scope>compile</scope>
         </dependency>
 
-
+		<!--
+		https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>5.6.2</version>
+		</dependency>
     </dependencies>
 
     <build>
