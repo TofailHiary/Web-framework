@@ -87,3 +87,7 @@ allure-results/0c130587-df72-4c20-9b59-15adb3b3c1ab-result.json
 allure-results/09d2bab0-ec19-4689-883f-6a11f88d5563-result.json
 allure-results/099cc326-c8a1-4f3a-a56b-45f609d0469c-result.json
 allure-results/082ac5be-eb52-4677-aca4-61bb1a503a41-result.json
+.factorypath
+.settings/org.eclipse.jdt.apt.core.prefs
+allure-results/80269fec-3db5-49b8-ba50-7110702a6936-result.json
+allure-results/849fa644-6c4e-4e99-899a-89b8e78560da-result.json
